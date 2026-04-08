@@ -35,6 +35,14 @@ public class Bucles {
                     break;
             }
         }
+        // bucle do while
+        //como minimo se ejecuta una vez, primera ejecuta y despues evalua. Al reves que while
+
+        int contador1= 0;
+        do{
+            System.out.println("Bucle do while "+contador1);
+            contador1++;
+        }while (contador1 <=5);
         //bucle for
 
         //for(inicializacion ; expresion condicional; incremento ){}
@@ -43,11 +51,14 @@ public class Bucles {
         }
         // bucle infinito con codicion de salida y break
         int i=5;
-                for(;;){
-                    System.out.println("Indice: "+i);
-                    i+=3;
-                    if (i>19) break;
+                for(;;) {
+                    System.out.println("Indice: " + i);
+                    i += 3;
+                    if (i > 19) break;
                 }
+
+
     }
 
 }
+
