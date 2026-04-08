@@ -50,6 +50,7 @@ public class Bucles {
             System.out.println("Indice: " + i);
         }
         // bucle infinito con codicion de salida y break
+
         int i=5;
                 for(;;) {
                     System.out.println("Indice: " + i);
