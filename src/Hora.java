@@ -5,26 +5,32 @@ public class Hora {
 
 
     public Hora(int h, int m, int s) {
-        this.hora = h;
-        this.minutos = m;
-        this.segundos = s;
+        setHora(h);
+        setMinutos(m);
+        setSegundos(s);
+
 
     }
+
 
     /*Constructor en String*/
     public Hora(String h) {
         String[] cositas = h.split(":");
-        this.hora =  Integer.parseInt(cositas[0]);
-        this.minutos = Integer.parseInt(cositas[1]);
-        this.segundos = Integer.parseInt(cositas[2]);
+        setHora(Integer.parseInt(cositas[0]));
+        setMinutos(Integer.parseInt(cositas[1]));
+        setSegundos(Integer.parseInt(cositas[2]));
     }
 
     /*Constructor en double*/
     public Hora(double h) {
-        this.hora = (int) h;
-        double residuo1 = hora - h;
-        this.minutos = (int) residuo1 * 60;
-        this.segundos = minutos * 60;
+        int hEntera = (int) h;
+        double parteDecimal = h - hEntera;
+        int m = (int) (parteDecimal * 60);
+        int s = (int) (((parteDecimal * 60) - m) * 60);
+
+        setHora(hEntera);
+        setMinutos(m);
+        setSegundos(s);
 
 
 
@@ -36,12 +42,12 @@ public class Hora {
         return this.hora;
     }
 
-    public void setHora() {
-        if (hora<24 && hora>=0) {
-            this.hora = hora;
+    public void setHora(int h) {
+        if (h<24 && h>=0) {
+            this.hora = h;
         }
         else {
-            System.out.println("error");
+            System.out.println("Error: El valor " + h + " no es válido para las horas.");
         }
     }
 
@@ -51,12 +57,12 @@ public class Hora {
         return this.minutos;
     }
 
-    public void setMinutos() {
-        if (minutos < 60 && minutos >= 0) {
-            this.minutos = minutos;
+    public void setMinutos(int min) {
+        if (min < 60 && min >= 0) {
+            this.minutos = min;
         }
         else {
-            System.out.println("error");
+            System.out.println("Error: El valor " + min + " no es válido para los minutos.");
         }
     }
 
@@ -66,18 +72,17 @@ public class Hora {
         return this.segundos;
     }
 
-    public void setSegundos() {
-        if (segundos<60 && segundos>=0) {
-            this.segundos = segundos;
+    public void setSegundos(int seg) {
+        if (seg<60 && seg>=0) {
+            this.segundos = seg;
         }
         else {
-            System.out.println("error");
+            System.out.println("Error: El valor " + seg + " no es válido para los segundos.");
         }
     }
-    public static void main() {
+    public static void main(String[] args) {
         Hora h1 =  new Hora("12:73:04");
-        Hora h2 =  new Hora(12,73,04);
+        Hora h2 =  new Hora(12,73,4);
         System.out.println(h1.minutos);
-
     }
 }
