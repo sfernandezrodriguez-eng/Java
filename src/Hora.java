@@ -8,10 +8,7 @@ public class Hora {
         setHora(h);
         setMinutos(m);
         setSegundos(s);
-
-
     }
-
 
     /*Constructor en String*/
     public Hora(String h) {
@@ -31,9 +28,6 @@ public class Hora {
         setHora(hEntera);
         setMinutos(m);
         setSegundos(s);
-
-
-
     }
 
 

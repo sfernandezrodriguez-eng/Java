@@ -8,8 +8,6 @@ public class MembroComunidadeEscolar extends Persoa {
         super(nom, dni, edade);
         this.codigoCentro = codCentro;
         this.nomeCentro = nomCentro;
-
-
     }
 
     public String getNomeCentro() {
