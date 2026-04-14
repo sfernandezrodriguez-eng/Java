@@ -3,6 +3,11 @@ public class Hora {
     private int minutos;
     private int segundos;
 
+    public Hora(){
+        this.hora=0;
+        this.minutos=0;
+        this.segundos=0;
+    }
 
     public Hora(int h, int m, int s) {
         setHora(h);
@@ -74,9 +79,19 @@ public class Hora {
             System.out.println("Error: El valor " + seg + " no es válido para los segundos.");
         }
     }
+
+    private void iniciaACero( ){
+        hora = 0;
+        minutos = 0;
+        segundos = 0;
+
+    }
+    public String toString() {
+        return "Hora: "+hora+" minutos: "+minutos+" segundos: "+segundos;
+    }
+
     public static void main(String[] args) {
-        Hora h1 =  new Hora("12:73:04");
-        Hora h2 =  new Hora(12,73,4);
-        System.out.println(h1.minutos);
+        Hora h =  new Hora();
+        System.out.println(h);
     }
 }
