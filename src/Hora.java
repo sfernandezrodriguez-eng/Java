@@ -23,6 +23,15 @@ public class Hora {
         setSegundos(Integer.parseInt(cositas[2]));
     }
 
+
+    public Hora (int[] hora){
+
+
+
+
+    }
+
+
     /*Constructor en double*/
     public Hora(double h) {
         int hEntera = (int) h;
