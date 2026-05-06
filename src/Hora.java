@@ -25,7 +25,24 @@ public class Hora {
 
 
     public Hora (int[] hora){
+        if (hora.length==1) {
+            this.hora = hora[0];
+        }
 
+        if (hora.length==2){
+            this.hora = hora[0];
+            this.minutos = hora[1];
+        }
+
+        if (hora.length==3){
+            this.hora = hora[0];
+            this.minutos = hora[1];
+            this.segundos = hora[2];
+        }
+
+        else {
+            System.out.println("error");
+        }
 
 
 
@@ -100,7 +117,8 @@ public class Hora {
     }
 
     public static void main(String[] args) {
-        Hora h =  new Hora();
+        int taboa[] ={2,3,4};
+        Hora h =  new Hora(taboa);
         System.out.println(h);
     }
 }
