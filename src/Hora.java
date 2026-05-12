@@ -26,6 +26,7 @@ public class Hora {
 
     public Hora (int[] hora){
         if (hora.length==1) {
+
             this.hora = hora[0];
         }
 

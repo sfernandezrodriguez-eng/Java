@@ -40,6 +40,7 @@ public class Persoa {
 
 
 
+
     public static void main() {
         Persoa p1 = new Persoa();
         Persoa p2 = new Persoa("Sergio", "44556U", 45);
