@@ -1,62 +1,56 @@
 import java.util.Comparator;
 import java.util.Objects;
 
+// Implementa Comparable para a orde natural (DNI)
 public class Futbolista extends Persoa implements Comparable<Futbolista> {
     private int numGoles;
 
-    public Futbolista(String nom, String dni, int edade, int numGoles) {
-        super(nom, dni, edade);
+    public Futbolista(String nome, String dni, int edade, int numGoles) {
+        super(nome, dni, edade);
         this.numGoles = numGoles;
     }
 
-    public String getNome(){
-        return nome;
+    // Getters e Setters
+    public int getNumGoles() { return numGoles; }
+
+    public void setNumGoles(int numGoles) { this.numGoles = numGoles; }
+
+    // 1. Orde natural por DNI (como pide o enunciado)
+    @Override
+    public int compareTo(Futbolista outro) {
+        return this.dni.compareTo(outro.dni);
     }
 
-    public void setNome(String nome) {
-        super.nome = nome;
-    }
-
-    public int getGoles() {
-        return numGoles;
-    }
-
-    public void setGoles(int numGoles) {
-        this.numGoles = numGoles;
+    // 2. Equals baseado no DNI
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Futbolista outro = (Futbolista) obj;
+        return Objects.equals(this.dni, outro.dni);
     }
 
     @Override
     public String toString() {
-        return "Nome: " + nome + " DNI: " + dni + " Edade: " + edade + " NumGoles: " + numGoles;
+        // Aproveitamos o toString de Persoa se existe, ou montamos o noso
+        return super.toString() + " | Goles: " + numGoles;
     }
 
-    // Orden natural: Por goles (de menor a mayor)
-    @Override
-    public int compareTo(Futbolista outro) {
-        return Integer.compare(this.numGoles, outro.numGoles);
+    // --- COMPARADORES ADICIONAIS ---
+
+    // Comparador por Nome
+    public static class ComparadorNome implements Comparator<Futbolista> {
+        @Override
+        public int compare(Futbolista f1, Futbolista f2) {
+            return f1.getNome().compareTo(f2.getNome());
+        }
     }
 
-    // Implementación completa del equals con Cast
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; // ¿Son el mismo objeto?
-        if (obj == null || getClass() != obj.getClass()) return false; // ¿Es nulo o de otra clase?
-        // Aquí hacemos el CAST que faltaba
-        Futbolista outro = (Futbolista) obj;
-        // Comparamos el DNI (que viene de Persoa) para saber si es el mismo humano
-        return Objects.equals(this.dni, outro.dni);
-    }
-
-
-    // Método estático para el comparador de Nombre + Goles
-    // Esto es mucho más limpio que implementar Comparator en la cabecera
-    public static Comparator<Futbolista> getComparadorNomeGoles() {
-        return (f1, f2) -> {
-            int resNombre = f1.getNome().compareTo(f2.getNome());
-            if (resNombre != 0) {
-                return resNombre;
-            }
-            return Integer.compare(f1.getGoles(), f2.getGoles());
-        };
+    // Comparador por Número de Goles
+    public static class ComparadorGoles implements Comparator<Futbolista> {
+        @Override
+        public int compare(Futbolista f1, Futbolista f2) {
+            return Integer.compare(f1.getNumGoles(), f2.getNumGoles());
+        }
     }
 }

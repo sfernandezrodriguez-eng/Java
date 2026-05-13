@@ -1,4 +1,4 @@
-/*public class Circulo extends Punto{
+public class Circulo extends Punto{
     private int radio;
 
 
@@ -17,14 +17,4 @@
         this.radio = radio;
     }
 
-    @Override
-    public  double calcularArea() {
-        return Math.PI* radio*radio;
-    }
-
-    @Override
-    public double calcularPerimetro(){
-        return 2*Math.PI*radio;
-    }
-
-}*/
+}

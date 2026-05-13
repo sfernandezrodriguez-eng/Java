@@ -1,4 +1,4 @@
-public class Punto {
+public class Punto implements Area{
     private int x;
     private int y;
 
@@ -32,11 +32,8 @@ public class Punto {
     public String toString() {
         return "X: "+x+" Y: "+y;
     }
-
-    public static void main(String[] args) {
-
-        Punto p =  new Punto(1,2);
-        System.out.println(p);
+    public static void main(String args[]) {
+        Punto p = new Punto(2,3);
+        System.out.println(p.calcularArea());
     }
-
 }
