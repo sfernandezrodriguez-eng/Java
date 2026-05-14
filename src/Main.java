@@ -11,5 +11,10 @@ void main() {
         System.out.println(equipo.get(i));
     }
 
+    Iterator<Futbolista> it = equipo.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+
 
 }
