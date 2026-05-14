@@ -40,11 +40,10 @@ public class Persoa {
 
     @Override
     public String toString() {
-        return "Persoa{" +
+        return "Persoa" +
                 "nome='" + nome + '\'' +
                 ", dni='" + dni + '\'' +
-                ", edade=" + edade +
-                '}';
+                ", edade=" + edade;
     }
 
     public static void main() {
