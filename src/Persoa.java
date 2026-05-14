@@ -38,8 +38,14 @@ public class Persoa {
         this.nome = nome;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Persoa{" +
+                "nome='" + nome + '\'' +
+                ", dni='" + dni + '\'' +
+                ", edade=" + edade +
+                '}';
+    }
 
     public static void main() {
         Persoa p1 = new Persoa();
