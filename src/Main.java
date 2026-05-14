@@ -7,14 +7,21 @@ void main() {
     equipo.add(f1);
     equipo.add(f2);
     equipo.add(f3);
-    for (int i=0;i<equipo.size();i++) {
+    /*for (int i=0;i<equipo.size();i++) {
         System.out.println(equipo.get(i));
     }
 
     Iterator<Futbolista> it = equipo.iterator();
     while (it.hasNext()) {
         System.out.println(it.next());
-    }
+    }*/
 
+    ListIterator<Futbolista> litr = equipo.listIterator();
+    while (litr.hasNext()) {
+        System.out.println( litr.next());
+    }
+    while (litr.hasPrevious()) {
+        System.out.println(litr.previous());
+    }
 
 }
