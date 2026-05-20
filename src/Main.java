@@ -24,4 +24,7 @@ void main() {
         System.out.println(litr.previous());
     }
 
+    Alumno a = new Alumno("sergio","123D",13,1234,"DCastelao","Dam");
+    System.out.println(a.getCurso());
+
 }
