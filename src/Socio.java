@@ -1,5 +1,3 @@
-package Ej9Colleciones;
-
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 import java.time.LocalDate;

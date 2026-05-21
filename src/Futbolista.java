@@ -38,7 +38,7 @@ public class Futbolista extends Persoa implements Comparable<Futbolista> {
 
     // --- COMPARADORES ADICIONAIS ---
 
-    // Comparador por Nome
+    // Comparador por Nome, equipo.sort(new Futbolista.ComparadorNome());
     public static class ComparadorNome implements Comparator<Futbolista> {
         @Override
         public int compare(Futbolista f1, Futbolista f2) {
