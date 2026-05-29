@@ -30,6 +30,13 @@ public class Socio extends Persoa implements Comparable<Socio>{
 
     }
 
+    /**@Override
+    public boolean equals2(Object outro){
+        Persoa outraPersoa = (Persoa) outro;
+        if (this.dni.equals( outraPersoa.dni)) return true;
+        return false;
+    }**/
+
     @Override
     public int compareTo(Socio o) {
         return this.dni.compareTo(o.dni);

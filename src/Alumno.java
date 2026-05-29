@@ -14,7 +14,7 @@ public class Alumno extends MembroComunidadeEscolar {
     }
 
     public void setCurso(String curso) {
-       if (curso=="Dam"){
+       if ("Dam".equals(curso)){
         this.curso = curso;}
        else {
            this.curso="nada"; }
